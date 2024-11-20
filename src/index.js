@@ -1,6 +1,10 @@
+import * as actions from "./actions";
 import store from "./custorScore";
-store.state = 1;
-console.log(store);
+
+store.dispatch(actions.bugAdded("Bug 1"));
+
+console.log(store.getState());
+
 // import { bugAdded, bugAddedResolver, bugResolved } from "./actions";
 // import store from "./store";
 
