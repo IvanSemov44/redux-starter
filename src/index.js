@@ -1,11 +1,16 @@
-import { bugAdded, bugAddedResolver, bugResolved } from "./actions";
-import store from "./store";
+import store from "./custorScore";
+store.state = 1;
+console.log(store);
+// import { bugAdded, bugAddedResolver, bugResolved } from "./actions";
+// import store from "./store";
 
-store.dispatch(bugAdded("Bug 1"));
-store.dispatch(bugAddedResolver("Bug 2"));
-store.dispatch(bugResolved(1));
+// console.log(store);
 
-console.log(store.getState());
+// store.dispatch(bugAdded("Bug 1"));
+// store.dispatch(bugAddedResolver("Bug 2"));
+// store.dispatch(bugResolved(1));
+
+// console.log(store.getState());
 
 // const unsubscribe = store.subscribe(() => {
 //   console.log("Store changed!", store.getState());
