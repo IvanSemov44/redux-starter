@@ -1,17 +1,35 @@
-import { produce } from "immer";
+import store from "./store";
 
-let book = { title: "Harry Potter" };
+store.dispatch({
+  type: "bugAdded",
+  payload: {
+    description: "Bug1",
+  },
+});
 
-function publish(book) {
-  return produce(book, (draftBook) => {
-    draftBook.isPublisher = true;
-  });
-}
+store.dispatch({
+  type: "bugRevoved",
+  payload: {
+    id: 1,
+  },
+});
 
-let updated = publish(book);
+console.log(store.getState());
 
-console.log(book);
-console.log(updated);
+// import { produce } from "immer";
+
+// let book = { title: "Harry Potter" };
+
+// function publish(book) {
+//   return produce(book, (draftBook) => {
+//     draftBook.isPublisher = true;
+//   });
+// }
+
+// let updated = publish(book);
+
+// console.log(book);
+// console.log(updated);
 
 // const numbers = [1, 2, 3];
 // console.log(numbers);
