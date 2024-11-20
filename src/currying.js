@@ -7,4 +7,4 @@ function add(a, b) {
 const add2 = (a) => (b) => a + b;
 
 add(1)(5);
-//N=>1
+//N=>6

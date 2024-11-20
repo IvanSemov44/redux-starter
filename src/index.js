@@ -1,27 +1,22 @@
-import * as actions from "./actionTypes";
+import { bugAdded } from "./actions";
 import store from "./store";
 
-const unsubscribe = store.subscribe(() => {
-  console.log("Store changed!", store.getState());
-});
-
-store.dispatch({
-  type: actions.BUG_ADDED,
-  payload: {
-    description: "Bug1",
-  },
-});
-
-unsubscribe();
-
-store.dispatch({
-  type: actions.BUG_REMOVED,
-  payload: {
-    id: 1,
-  },
-});
+store.dispatch(bugAdded("Bug 1"));
 
 console.log(store.getState());
+
+// const unsubscribe = store.subscribe(() => {
+//   console.log("Store changed!", store.getState());
+// });
+
+// unsubscribe();
+
+// store.dispatch({
+//   type: actions.BUG_REMOVED,
+//   payload: {
+//     id: 1,
+//   },
+// });
 
 // import { produce } from "immer";
 
